@@ -1,7 +1,7 @@
 # Read Me First
 The following was discovered as part of building this project:
 
-* The original package name 'com.example.finchik-telegram-bot' is invalid and this project uses 'com.example.finchik_telegram_bot' instead.
+* The original package name 'com.example.finchik-telegram-bot' is invalid and this project uses 'com.example.finchiktelegrambot' instead.
 
 # Getting Started
 

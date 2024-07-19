@@ -21,14 +21,17 @@ GRANT USAGE ON SEQUENCE ${flyway:defaultSchema}.telegram_user_id_seq TO ${servic
 ----------------------------------------------------------------------------------------------------
 CREATE TABLE ${flyway:defaultSchema}.dialog_state_context(
     id BIGSERIAL NOT NULL,
+    id_telegram_user int8 NOT NULL,
     state VARCHAR(255) NOT NULL,
     context JSONB NOT NULL,
-    CONSTRAINT pk_dialog_state_context PRIMARY KEY (id)
+    CONSTRAINT pk_dialog_state_context PRIMARY KEY (id),
+    CONSTRAINT fk_dialog_state_context_telegram_user FOREIGN KEY (id_telegram_user) REFERENCES ${flyway:defaultSchema}.telegram_user
 );
 
 COMMENT ON TABLE ${flyway:defaultSchema}.dialog_state_context IS 'Данные о диалоге пользователя с ботом';
 
 COMMENT ON COLUMN ${flyway:defaultSchema}.dialog_state_context.id IS 'Идентификатор записи';
+COMMENT ON COLUMN ${flyway:defaultSchema}.dialog_state_context.id_telegram_user IS 'Идентификатор записи с данными пользователя';
 COMMENT ON COLUMN ${flyway:defaultSchema}.dialog_state_context.state IS 'Состояние диалога пользователя с ботом';
 COMMENT ON COLUMN ${flyway:defaultSchema}.dialog_state_context.context IS 'Контекст диалога пользователя с ботом';
 

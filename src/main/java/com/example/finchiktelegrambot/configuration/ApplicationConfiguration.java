@@ -1,4 +1,4 @@
-package com.example.finchik_telegram_bot.configuration;
+package com.example.finchiktelegrambot.configuration;
 
 import lombok.Data;
 import org.springframework.boot.context.properties.ConfigurationProperties;

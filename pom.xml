@@ -12,7 +12,7 @@
 	<artifactId>finchik-telegram-bot</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>finchik-telegram-bot</name>
-	<description>Телеграм бот для подсчета финансов</description>
+	<description>Телеграм бот для учета трат и доходов</description>
 	<url/>
 	<licenses>
 		<license/>

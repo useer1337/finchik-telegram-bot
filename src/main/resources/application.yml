@@ -1,4 +1,30 @@
+server:
+  port: 9000
+
 spring:
   application:
     name: finchik-telegram-bot
+    schema: app
+  jpa:
+    properties:
+      hibernate:
+        default_schema: ${spring.application.schema}
+  datasource:
+    hikari:
+      minimum-idle: 5
+      maximum-pool-size: 5
+    name: database_name
+    username: user
+    password: password
+    host: host:port
+    url: jdbc:postgresql://${spring.datasource.host}/${spring.datasource.name}?ApplicationName=${spring.application.name}
+  flyway:
+    user: user
+    password: password
+    schemas: ${spring.application.schema}
+    placeholders:
+      service_user: ${spring.datasource.username}
 
+app:
+  telegram_bot_name: name
+  telegram_bot_token: token
